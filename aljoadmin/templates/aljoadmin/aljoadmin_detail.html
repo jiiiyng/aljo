@@ -46,6 +46,16 @@
               <p class="contents" style="word-break:break-all;">
                   {{object.recipe}}
               </p>
+              {% if object.foodname == "돼지바 프라푸치노" %}
+              <a href="https://www.starbucks.co.kr:7643/app/share/landing.do?favoriteNo=12020121318151709489" style="color:var(--color-green); font-weight:600;">스타벅스 앱 나만의 메뉴에 등록하기</a>&nbsp;|
+              <a href="javascript:showImgWin('/static/img/돼지바.jpg')" style="color:var(--color-green); font-weight:600;">QR코드 보기</a>
+              {% elif object.foodname == "버터비어 프라푸치노" %}
+              <a href="https://www.starbucks.co.kr:7643/app/share/landing.do?favoriteNo=12020121318344409568" style="color:var(--color-green); font-weight:600;">스타벅스 앱 나만의 메뉴에 등록하기</a>&nbsp;|
+              <a href="javascript:showImgWin('/static/img/버터비어.jpg')" style="color:var(--color-green); font-weight:600;">QR코드 보기</a>
+              {% elif object.foodname == "고디바 프라푸치노" %}
+              <a href="https://www.starbucks.co.kr:7643/app/share/landing.do?favoriteNo=12020121318361109570" style="color:var(--color-green); font-weight:600;">스타벅스 앱 나만의 메뉴에 등록하기</a>&nbsp;|
+              <a href="javascript:showImgWin('/static/img/고디바.jpg')" style="color:var(--color-green); font-weight:600;">QR코드 보기</a>
+              {% endif %}
               <div class="hashtags">
                   <b>TAGS &nbsp;</b><i class="fas fa-tag"></i>
                   {% load taggit_templatetags2_tags %}
@@ -101,11 +111,11 @@
 </main>
 <div class="app-call">
     {% if object.brand == "스타벅스" %}
-    <a href="#" id="btnRun">리스트에 추가</a>
+    <a href="#" id="btnRun">앱 실행(Apple)</a> <span style="color:white;">&nbsp; | &nbsp;</span> <a href="#" id="btnRun_and">앱 실행(Android)</a>
     {% elif object.brand == "이디야" %}
-    <a href="#" id="btnRun2">리스트에 추가</a>
+    <a href="#" id="btnRun2">앱 실행(Apple)</a> <span style="color:white;">&nbsp; | &nbsp;</span> <a href="#" id="btnRun2_and">앱 실행(Android)</a>
     {% elif object.brand == "공차" %}
-    <a href="#" id="btnRun3">리스트에 추가</a>
+    <a href="#" id="btnRun3">앱 실행(Apple)</a> <span style="color:white;">&nbsp; | &nbsp;</span> <a href="#" id="btnRun3_and">앱 실행(Android)</a>
     {% endif %}
 </div>
 {% endblock %}
@@ -126,6 +136,35 @@
         $("#btnRun3").click(function () {
             runGongcha_ios();
         });
+        $("#btnRun_and").click(function () {
+            runStarbucks_and();
+        });
+        $("#btnRun2_and").click(function () {
+            runEdiya_and();
+        });
+        $("#btnRun3_and").click(function () {
+            runGongcha_and();
+        });
     });
 </script>
+<script language="JavaScript">
+var imgObj = new Image();
+function showImgWin(imgName) {
+    imgObj.src = imgName;
+    setTimeout("createImgWin(imgObj)", 100);
+}
+function createImgWin(imgObj) {
+    if (! imgObj.complete) {
+        setTimeout("createImgWin(imgObj)", 100);
+        return;
+}
+imageWin = window.open("", "imageWin", "width=" + imgObj.width + ",height=" + imgObj.height);
+imageWin.document.write("<html><body style='margin:0'>");
+imageWin.document.write("<img src='" + imgObj.src + "'>");
+imageWin.document.write("</body><html>");
+imageWin.document.title = imgObj.src;
+}
+</script>
+
+출처: https://foco85.tistory.com/21 [래채'sTory]
 {% endblock %}

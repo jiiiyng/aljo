@@ -102,12 +102,12 @@
     </section>
 </main>
 <div class="app-call">
-     {% if object.brand == "스타벅스" %}
-    <a href="#" id="btnRun">리스트에 추가</a>
+    {% if object.brand == "스타벅스" %}
+    <a href="#" id="btnRun">앱 실행(Apple)</a> <span style="color:white;">&nbsp; | &nbsp;</span> <a href="#" id="btnRun_and">앱 실행(Android)</a>
     {% elif object.brand == "이디야" %}
-    <a href="#" id="btnRun2">리스트에 추가</a>
+    <a href="#" id="btnRun2">앱 실행(Apple)</a> <span style="color:white;">&nbsp; | &nbsp;</span> <a href="#" id="btnRun2_and">앱 실행(Android)</a>
     {% elif object.brand == "공차" %}
-    <a href="#" id="btnRun3">리스트에 추가</a>
+    <a href="#" id="btnRun3">앱 실행(Apple)</a> <span style="color:white;">&nbsp; | &nbsp;</span> <a href="#" id="btnRun3_and">앱 실행(Android)</a>
     {% endif %}
 </div>
 {% endblock %}
@@ -127,6 +127,15 @@
         });
         $("#btnRun3").click(function () {
             runGongcha_ios();
+        });
+        $("#btnRun_and").click(function () {
+            runStarbucks_and();
+        });
+        $("#btnRun2_and").click(function () {
+            runEdiya_and();
+        });
+        $("#btnRun3_and").click(function () {
+            runGongcha_and();
         });
     });
 </script>

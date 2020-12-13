@@ -41,19 +41,20 @@
               <a href="{% url 'aljoadmin:ediya' %}"><img src="/static/img/이디야.png" alt="이디야" width="50px" height="50px"></a>&nbsp;&nbsp;&nbsp;
               <a href="{% url 'aljoadmin:gongcha' %}"><img src="/static/img/공차.png" alt="공차" width="50px" height="50px" style="border:2px solid #aa3434; border-radius:100%;"></a><hr>
           </div>
-                  {% for aljo in object_list %}
-                  <div style="margin:10px 3% 7% 0; float:left; ">
-                      <a href='{{ aljo.get_absolute_url }}'><img src="{{aljo.image_thumbnail.url}}"></a><br><br>
-                      <h2 style="text-align:center;"><a href='{{ aljo.get_absolute_url }}'>{{ aljo }}</a></h2>
-                      <span class="font">{{aljo.owner}}</span>
 
-                      {% if aljo.count_like_users == 0 %}
-                      <span class="font like"><i class="far fa-heart fa-lg animated delay-1s" style="color: gray;"></i> {{ aljo.count_like_users }}개</span><br>
-                      {% else %}
-                      <span class="font like"><i class="fas fa-heart fa-lg animated delay-1s" style="color: red;"></i> {{ aljo.count_like_users }}개</span><br>
-                      {% endif %}
-                  </div>
-                  {% endfor %}
+          {% for aljo in object_list %}
+          <div style="margin:10px 3% 7% 0px; float:left; ">
+              <a href='{{ aljo.get_absolute_url }}'><img src="{{aljo.image_thumbnail.url}}"></a><br><br>
+              <h2 style="text-align:center;"><a href='{{ aljo.get_absolute_url }}'>{{ aljo }}</a></h2>
+              <span class="font">{{aljo.owner}}</span>
+
+              {% if aljo.count_like_users == 0 %}
+              <span class="font like"><i class="far fa-heart fa-lg animated delay-1s" style="color: gray;"></i> {{ aljo.count_like_users }}개</span><br>
+              {% else %}
+              <span class="font like"><i class="fas fa-heart fa-lg animated delay-1s" style="color: red;"></i> {{ aljo.count_like_users }}개</span><br>
+              {% endif %}
+          </div>
+          {% endfor %}
 
       </section>
 {% endblock %}

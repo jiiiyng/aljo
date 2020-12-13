@@ -225,6 +225,8 @@ textarea:focus{
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius:30px;
+  box-shadow: 0px 2px 7px 0.5px rgba(0, 0, 0, 0.7);
 }
 
 .list-container .top-list-menu .top-list-slider {
@@ -239,11 +241,6 @@ textarea:focus{
   margin: 0 auto;
   width: 90%;
   height: 90%;
-}
-
-.list-container .top-list-menu .top-list-slider img {
-  border-radius:30px;
-  box-shadow: 0px 2px 7px 0.5px rgba(0, 0, 0, 0.7);
 }
 
 .list-container .top-list-menu .slick-dots {
@@ -670,8 +667,7 @@ textarea:focus{
   box-shadow: 0px -1px 7px 0.5px #333;
 }
 
-#btnRun, #btnRun2, #btnRun3 {
-  display: block;
+#btnRun, #btnRun2, #btnRun3, #btnRun_and, #btnRun2_and, #btnRun3_and {
   color: #fff;
   width: 100%;
   height: 100%;
