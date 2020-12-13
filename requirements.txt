@@ -12,6 +12,7 @@ django-taggit==1.3.0
 django-taggit-templatetags2==1.6.1
 django-widget-tweaks==1.4.8
 jmespath==0.10.0
+joblib @ file:///home/conda/feedstock_root/build_artifacts/joblib_1601671685479/work
 numpy @ file:///D:/bld/numpy_1604946136447/work
 pandas==1.1.5
 pilkit==2.0
