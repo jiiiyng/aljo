@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load widget_tweaks %}
+{% load static %}
+
+{% block title %}aljouser_form.html{% endblock %}
+
+{% block content %}
+    <section class="user-board-container">
+        <h1 style="font-weight:600; color: var(--color-green);"># {{ tagname }}</h1>
+        <br>
+
+        {% for aljo in object_list %}
+            <div style="margin:0 3% 3% 0; float:left; ">
+                <a href='{{ aljo.get_absolute_url }}'><img src="{{aljo.image_thumbnail.url}}"></a><br>
+                <h2><a href='{{ aljo.get_absolute_url }}'>{{ aljo }}</a></h2>
+                <h6>{{aljo.owner}}</h6>
+
+                {% with aljo_like_users=aljo.like_users.all %}
+                    {% if aljo_like_users.count == 0 %}
+                        <span><i class="far fa-heart fa-lg animated delay-1s" style="color: gray;"></i> {{ aljo_like_users.count }}개</span><br>
+                    {% else %}
+                        <span><i class="fas fa-heart fa-lg animated delay-1s" style="color: red;"></i> {{ aljo_like_users.count }}개</span><br>
+                    {% endif %}
+                {% endwith %}
+            </div>
+        {% endfor %}
+    </section>
+{% endblock %}
+
+
+
