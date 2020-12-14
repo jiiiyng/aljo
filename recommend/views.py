@@ -25,7 +25,6 @@ def recommend_index(request):
 def recommend_result(request):
     test = Recommend()
     ratings={}
-    test.user = request.user
 
     if request.POST.get('q1'):
         test.q1 = request.POST.get('q1')

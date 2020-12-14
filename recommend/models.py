@@ -2,7 +2,6 @@ from django.db import models
 from django.conf import settings
 
 class Recommend(models.Model):
-    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, null=True)
     q1 = models.IntegerField(null=True)
     q2 = models.IntegerField(null=True)
     q3 = models.IntegerField(null=True)
