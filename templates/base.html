@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>{% block title %}aljo| 알바생이 추천하는 조합{% endblock %}</title>
+    <title>{% block title %}Aljo : 알바생이 추천하는 조합{% endblock %}</title>
 
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
     <link rel="stylesheet" href="{% static 'css/reset.css' %}" />
@@ -32,9 +32,9 @@
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
                   <li class="nav-item mx-1 btn">
-                      <a class="nav-link text-white" href="{% url 'aljoadmin:index' %}">관리자 메뉴</a></li>
+                      <a class="nav-link text-white" href="{% url 'aljoadmin:index' %}">베스트 조합</a></li>
                   <li class="nav-item mx-1 btn">
-                      <a class="nav-link text-white" href="{% url 'aljouser:index' %}">사용자 메뉴</a></li>
+                      <a class="nav-link text-white" href="{% url 'aljouser:index' %}">베스트 도전</a></li>
                   <li class="nav-item mx-1 btn">
                       <a class="nav-link text-white" href="{% url 'recommend:recommend_index' %}">맞춤 추천</a></li>
               </ul>

@@ -1,6 +1,9 @@
 from django.shortcuts import render
 from .models import Recommend
 from django.contrib.auth.decorators import login_required
+from aljoadmin.models import Aljoadmin
+from django.db.models import Q
+from django.utils.text import slugify
 
 import pandas as pd
 import csv
@@ -23,66 +26,67 @@ def recommend_result(request):
     test = Recommend()
     ratings={}
     test.user = request.user
+
     if request.POST.get('q1'):
         test.q1 = request.POST.get('q1')
-        ratings['공차타로밀크티'] = test.q1
+        ratings['타로 밀크티'] = test.q1
     if request.POST.get('q2'):
         test.q2 = request.POST.get('q2')
-        ratings['공차블랙밀크티'] = test.q2
+        ratings['블랙 밀크티'] = test.q2
     if request.POST.get('q3'):
         test.q3 = request.POST.get('q3')
-        ratings['공차초콜렛밀크티'] = test.q3
+        ratings['초콜렛 밀크티'] = test.q3
     if request.POST.get('q4'):
         test.q4 = request.POST.get('q4')
-        ratings['공차우롱밀크티'] = test.q4
+        ratings['우롱 밀크티'] = test.q4
     if request.POST.get('q5'):
         test.q5 = request.POST.get('q5')
-        ratings['공차망고요구르트'] = test.q5
+        ratings['망고 요구르트'] = test.q5
     if request.POST.get('q6'):
         test.q6 = request.POST.get('q6')
-        ratings['공차망고스무디'] = test.q6
+        ratings['망고 스무디'] = test.q6
     if request.POST.get('q7'):
         test.q7 = request.POST.get('q7')
-        ratings['이디야딸기쉐이크'] = test.q7
+        ratings['딸기 쉐이크'] = test.q7
     if request.POST.get('q8'):
         test.q8 = request.POST.get('q8')
-        ratings['이디야토피넛라떼'] = test.q8
+        ratings['토피넛 라떼'] = test.q8
     if request.POST.get('q9'):
         test.q9 = request.POST.get('q9')
-        ratings['이디야녹차플랫치노'] = test.q9
+        ratings['녹차 플랫치노'] = test.q9
     if request.POST.get('q10'):
         test.q10 = request.POST.get('q10')
-        ratings['이디야초콜릿칩플랫치노'] = test.q10
+        ratings['초콜릿칩 플랫치노'] = test.q10
     if request.POST.get('q11'):
         test.q11 = request.POST.get('q11')
-        ratings['이디야오리진쉐이크'] = test.q11
+        ratings['오리진 쉐이크'] = test.q11
     if request.POST.get('q12'):
         test.q12 = request.POST.get('q12')
-        ratings['이디야녹차라떼'] = test.q12
+        ratings['녹차 라떼'] = test.q12
     if request.POST.get('q13'):
         test.q13 = request.POST.get('q13')
-        ratings['이디야아이스티'] = test.q13
+        ratings['아이스티'] = test.q13
     if request.POST.get('q14'):
         test.q14 = request.POST.get('q14')
-        ratings['스타벅스초콜릿크림칩프라푸치노'] = test.q14
+        ratings['초콜릿크림칩 프라푸치노'] = test.q14
     if request.POST.get('q15'):
         test.q15 = request.POST.get('q15')
-        ratings['스타벅스바닐라크림프라푸치노'] = test.q15
+        ratings['바닐라크림 프라푸치노'] = test.q15
     if request.POST.get('q16'):
         test.q16 = request.POST.get('q16')
-        ratings['스타벅스말차크림프라푸치노'] = test.q16
+        ratings['말차크림 프라푸치노'] = test.q16
     if request.POST.get('q17'):
         test.q17 = request.POST.get('q17')
-        ratings['스타벅스화이트딸기크림프라푸치노'] = test.q17
+        ratings['화이트딸기크림 프라푸치노'] = test.q17
     if request.POST.get('q18'):
         test.q18 = request.POST.get('q18')
-        ratings['스타벅스카라멜프라푸치노'] = test.q18
+        ratings['카라멜 프라푸치노'] = test.q18
     if request.POST.get('q19'):
         test.q19 = request.POST.get('q19')
-        ratings['스타벅스자바칩프라푸치노'] = test.q19
+        ratings['자바칩 프라푸치노'] = test.q19
     if request.POST.get('q20'):
         test.q20 = request.POST.get('q20')
-        ratings['스타벅스아메리카노'] = test.q20
+        ratings['아메리카노'] = test.q20
     test.save()
     f = open('menu_rating.csv', 'a', newline='', encoding='utf-8')
     wr = csv.writer(f)
@@ -198,11 +202,13 @@ def recommend_result(request):
         # results.append(second)
         # results.append(third)
         return first
+
     def pic():
         first=localtest()
         pic = '/static/img/'+first+'.png'
         # pic = '''<img src="{%static 'img/'''+localtest()+'''.png'%}" alt="추천 이미지" />'''
         return pic
 
+    aljorecommend = Aljoadmin.objects.filter(Q(foodname__icontains=localtest()) | Q(recipe__icontains=localtest())).distinct()
 
-    return render(request, 'menu-recommend-result.html', {'localtest':localtest, 'pic':pic})
+    return render(request, 'menu-recommend-result.html', {'localtest':localtest, 'pic':pic, 'aljorecommend':aljorecommend})

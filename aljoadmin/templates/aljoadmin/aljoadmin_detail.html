@@ -2,7 +2,7 @@
 {% load widget_tweaks %}
 {% load static %}
 
-{% block title %}aljoadmin_form.html{% endblock %}
+{% block title %}Aljo : 알바생이 추천하는 조합{% endblock %}
 
 {% block extra-style %}
 <style>
@@ -55,6 +55,18 @@
               {% elif object.foodname == "고디바 프라푸치노" %}
               <a href="https://www.starbucks.co.kr:7643/app/share/landing.do?favoriteNo=12020121318361109570" style="color:var(--color-green); font-weight:600;">스타벅스 앱 나만의 메뉴에 등록하기</a>&nbsp;|
               <a href="javascript:showImgWin('/static/img/고디바.jpg')" style="color:var(--color-green); font-weight:600;">QR코드 보기</a>
+              {% elif object.foodname == "아메리카노" %}
+              <a href="https://www.starbucks.co.kr:7643/app/share/landing.do?favoriteNo=12020121420025715053" style="color:var(--color-green); font-weight:600;">스타벅스 앱 나만의 메뉴에 등록하기</a>&nbsp;|
+              <a href="javascript:showImgWin('/static/img/아아.jpg')" style="color:var(--color-green); font-weight:600;">QR코드 보기</a>
+              {% elif object.foodname == "트윅스 프라푸치노" %}
+              <a href="https://www.starbucks.co.kr:7643/app/share/landing.do?favoriteNo=12020121420045215060" style="color:var(--color-green); font-weight:600;">스타벅스 앱 나만의 메뉴에 등록하기</a>&nbsp;|
+              <a href="javascript:showImgWin('/static/img/트윅스.jpg')" style="color:var(--color-green); font-weight:600;">QR코드 보기</a>
+              {% elif object.foodname == "말차크림 프라푸치노" %}
+              <a href="https://www.starbucks.co.kr:7643/app/share/landing.do?favoriteNo=12020121420063715073" style="color:var(--color-green); font-weight:600;">스타벅스 앱 나만의 메뉴에 등록하기</a>&nbsp;|
+              <a href="javascript:showImgWin('/static/img/말차크림.jpg')" style="color:var(--color-green); font-weight:600;">QR코드 보기</a>
+              {% elif object.foodname == "초콜릿크림칩 프라푸치노" %}
+              <a href="https://www.starbucks.co.kr:7643/app/share/landing.do?favoriteNo=12020121420075915077" style="color:var(--color-green); font-weight:600;">스타벅스 앱 나만의 메뉴에 등록하기</a>&nbsp;|
+              <a href="javascript:showImgWin('/static/img/초콜릿크림칩.jpg')" style="color:var(--color-green); font-weight:600;">QR코드 보기</a>
               {% endif %}
               <div class="hashtags">
                   <b>TAGS &nbsp;</b><i class="fas fa-tag"></i>

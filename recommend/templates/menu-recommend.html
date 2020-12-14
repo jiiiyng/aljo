@@ -2,7 +2,7 @@
 {% load widget_tweaks %}
 {% load static %}
 
-{% block title %}Aljo : 추천{% endblock %}
+{% block title %}Aljo : 알바생이 추천하는 조합{% endblock %}
 
 {% block extra-style %}
 <style>
@@ -103,7 +103,7 @@
 {% block content %}
         <section class="user-board-container">
             <div class="board-title">
-                <h2 class="title" style="text-align: center;">개인 맞춤 메뉴 추천</h2><br>
+                <h2 class="title" style="text-align: center; font-weight:600;">개인 맞춤 메뉴 추천</h2><br>
                 <div style="text-align:center; font-size:26px; font-weight:600; color:#5ba16b">
                     "{{ user }}"<span style=" color:black;">님 안녕하세요.</span>
                 </div><br>
@@ -113,7 +113,7 @@
                 <form action="{% url 'recommend:recommend_result'%}" method="POST" style="margin:0 auto;">
                      {% csrf_token %}
                     <div class="rdo-grp" style="text-align: center;">
-                        <img src="{% static 'img/공차타로밀크티.png'%}" alt="메뉴 이미지" /><br>공차타로밀크티<br><br>
+                        <img src="{% static 'img/타로 밀크티.png'%}" alt="메뉴 이미지" /><br>공차 타로 밀크티<br><br>
                             <input type="radio" name="q1" value="1" id="c1" /><label
                                 for="c1"><span></span><span>1</span></label>
                             <input type="radio" name="q1" value="2" id="c2" /><label
@@ -125,7 +125,7 @@
                             <input type="radio" name="q1" value="5" id="c5" /><label
                                 for="c5"><span></span><span>5</span></label>
                             <br><br>
-                        <img src="{% static 'img/공차블랙밀크티.png'%}" alt="메뉴 이미지" /><br>공차블랙밀크티<br><br>
+                        <img src="{% static 'img/블랙 밀크티.png'%}" alt="메뉴 이미지" /><br>공차 블랙 밀크티<br><br>
                         <input type="radio" name="q2" value="1" id="c6" /><label
                             for="c6"><span></span><span>1</span></label>
                         <input type="radio" name="q2" value="2" id="c7" /><label
@@ -138,7 +138,7 @@
                             for="c10"><span></span><span>5</span></label>
                         <br><br>
 
-                        <img src="{% static 'img/공차초콜렛밀크티.png'%}" alt="메뉴 이미지" /><br>공차초콜렛밀크티<br><br>
+                        <img src="{% static 'img/초콜렛 밀크티.png'%}" alt="메뉴 이미지" /><br>공차 초콜렛 밀크티<br><br>
                         <input type="radio" name="q3" value="1" id="c11" /><label
                             for="c11"><span></span><span>1</span></label>
                         <input type="radio" name="q3" value="2" id="c12" /><label
@@ -151,7 +151,7 @@
                             for="c15"><span></span><span>5</span></label>
                         <br><br>
 
-                        <img src="{% static 'img/공차우롱밀크티.png'%}" alt="메뉴 이미지" /><br>공차우롱밀크티<br><br>
+                        <img src="{% static 'img/우롱 밀크티.png'%}" alt="메뉴 이미지" /><br>공차 우롱 밀크티<br><br>
                         <input type="radio" name="q4" value="1" id="c16" /><label
                             for="c16"><span></span><span>1</span></label>
                         <input type="radio" name="q4" value="2" id="c17" /><label
@@ -164,7 +164,7 @@
                             for="c20"><span></span><span>5</span></label>
                         <br><br>
 
-                        <img src="{% static 'img/공차망고요구르트.png'%}" alt="메뉴 이미지" /><br>공차망고요구르트<br><br>
+                        <img src="{% static 'img/망고 요구르트.png'%}" alt="메뉴 이미지" /><br>공차 망고 요구르트<br><br>
                         <input type="radio" name="q5" value="1" id="c21" /><label
                             for="c21"><span></span><span>1</span></label>
                         <input type="radio" name="q5" value="2" id="c22" /><label
@@ -177,7 +177,7 @@
                             for="c25"><span></span><span>5</span></label>
                         <br><br>
 
-                        <img src="{% static 'img/공차망고스무디.png'%}" alt="메뉴 이미지" /><br>공차망고스무디<br><br>
+                        <img src="{% static 'img/망고 스무디.png'%}" alt="메뉴 이미지" /><br>공차 망고 스무디<br><br>
                         <input type="radio" name="q6" value="1" id="c26" /><label
                             for="c26"><span></span><span>1</span></label>
                         <input type="radio" name="q6" value="2" id="c27" /><label
@@ -190,7 +190,7 @@
                             for="c30"><span></span><span>5</span></label>
                         <br><br>
 
-                        <img src="{% static 'img/이디야딸기쉐이크.png'%}" alt="메뉴 이미지" /><br>이디야딸기쉐이크<br><br>
+                        <img src="{% static 'img/딸기 쉐이크.png'%}" alt="메뉴 이미지" /><br>이디야 딸기 쉐이크<br><br>
                         <input type="radio" name="q7" value="1" id="c31" /><label
                             for="c31"><span></span><span>1</span></label>
                         <input type="radio" name="q7" value="2" id="c32" /><label
@@ -203,7 +203,7 @@
                             for="c35"><span></span><span>5</span></label>
                         <br><br>
 
-                        <img src="{% static 'img/이디야토피넛라떼.png'%}" alt="메뉴 이미지" /><br>이디야토피넛라떼<br><br>
+                        <img src="{% static 'img/토피넛 라떼.png'%}" alt="메뉴 이미지" /><br>이디야 토피넛 라떼<br><br>
                         <input type="radio" name="q8" value="1" id="c36" /><label
                             for="c36"><span></span><span>1</span></label>
                         <input type="radio" name="q8" value="2" id="c37" /><label
@@ -216,7 +216,7 @@
                             for="c40"><span></span><span>5</span></label>
                         <br><br>
 
-                        <img src="{% static 'img/이디야녹차플랫치노.png'%}" alt="메뉴 이미지" /><br>이디야녹차플랫치노<br><br>
+                        <img src="{% static 'img/녹차 플랫치노.png'%}" alt="메뉴 이미지" /><br>이디야 녹차 플랫치노<br><br>
                         <input type="radio" name="q9" value="1" id="c41" /><label
                             for="c41"><span></span><span>1</span></label>
                         <input type="radio" name="q9" value="2" id="c42" /><label
@@ -229,7 +229,7 @@
                             for="c45"><span></span><span>5</span></label>
                         <br><br>
 
-                        <img src="{% static 'img/이디야초콜릿칩플랫치노.png'%}" alt="메뉴 이미지" /><br>이디야초콜릿칩플랫치노<br><br>
+                        <img src="{% static 'img/초콜릿칩 플랫치노.png'%}" alt="메뉴 이미지" /><br>이디야 초콜릿칩 플랫치노<br><br>
                         <input type="radio" name="q10" value="1" id="c46" /><label
                             for="c46"><span></span><span>1</span></label>
                         <input type="radio" name="q10" value="2" id="c47" /><label
@@ -242,7 +242,7 @@
                             for="c50"><span></span><span>5</span></label>
                         <br><br>
 
-                        <img src="{% static 'img/이디야오리진쉐이크.png'%}" alt="메뉴 이미지" /><br>이디야오리진쉐이크<br><br>
+                        <img src="{% static 'img/오리진 쉐이크.png'%}" alt="메뉴 이미지" /><br>이디야 오리진 쉐이크<br><br>
                         <input type="radio" name="q11" value="1" id="c51" /><label
                             for="c51"><span></span><span>1</span></label>
                         <input type="radio" name="q11" value="2" id="c52" /><label
@@ -255,7 +255,7 @@
                             for="c55"><span></span><span>5</span></label>
                         <br><br>
 
-                        <img src="{% static 'img/이디야녹차라떼.png'%}" alt="메뉴 이미지" /><br>이디야녹차라떼<br><br>
+                        <img src="{% static 'img/녹차 라떼.png'%}" alt="메뉴 이미지" /><br>이디야 녹차라떼<br><br>
                         <input type="radio" name="q12" value="1" id="c56" /><label
                             for="c56"><span></span><span>1</span></label>
                         <input type="radio" name="q12" value="2" id="c57" /><label
@@ -268,7 +268,7 @@
                             for="c60"><span></span><span>5</span></label>
                         <br><br>
 
-                        <img src="{% static 'img/이디야아이스티.png'%}" alt="메뉴 이미지" /><br>이디야아이스티<br><br>
+                        <img src="{% static 'img/아이스티.png'%}" alt="메뉴 이미지" /><br>이디야 아이스티<br><br>
                         <input type="radio" name="q13" value="1" id="c61" /><label
                             for="c61"><span></span><span>1</span></label>
                         <input type="radio" name="q13" value="2" id="c62" /><label
@@ -281,7 +281,7 @@
                             for="c65"><span></span><span>5</span></label>
                         <br><br>
 
-                        <img src="{% static 'img/스타벅스초콜릿크림칩프라푸치노.png'%}" alt="메뉴 이미지" /><br>스타벅스초콜릿크림칩프라푸치노<br><br>
+                        <img src="{% static 'img/초콜릿크림칩 프라푸치노.png'%}" alt="메뉴 이미지" /><br>스타벅스 초콜릿크림칩 프라푸치노<br><br>
                         <input type="radio" name="q14" value="1" id="c66" /><label
                             for="c66"><span></span><span>1</span></label>
                         <input type="radio" name="q14" value="2" id="c67" /><label
@@ -294,7 +294,7 @@
                             for="c70"><span></span><span>5</span></label>
                         <br><br>
 
-                        <img src="{% static 'img/스타벅스바닐라크림프라푸치노.png'%}" alt="메뉴 이미지" /><br>스타벅스바닐라크림프라푸치노<br><br>
+                        <img src="{% static 'img/바닐라크림 프라푸치노.png'%}" alt="메뉴 이미지" /><br>스타벅스 바닐라크림 프라푸치노<br><br>
                         <input type="radio" name="q15" value="1" id="c71" /><label
                             for="c71"><span></span><span>1</span></label>
                         <input type="radio" name="q15" value="2" id="c72" /><label
@@ -307,7 +307,7 @@
                             for="c75"><span></span><span>5</span></label>
                         <br><br>
 
-                        <img src="{% static 'img/스타벅스말차크림프라푸치노.png'%}" alt="메뉴 이미지" /><br>스타벅스말차크림프라푸치노<br><br>
+                        <img src="{% static 'img/말차크림 프라푸치노.png'%}" alt="메뉴 이미지" /><br>스타벅스 말차크림 프라푸치노<br><br>
                         <input type="radio" name="q16" value="1" id="c76" /><label
                             for="c76"><span></span><span>1</span></label>
                         <input type="radio" name="q16" value="2" id="c77" /><label
@@ -320,7 +320,7 @@
                             for="c80"><span></span><span>5</span></label>
                         <br><br>
 
-                        <img src="{% static 'img/스타벅스화이트딸기크림프라푸치노.png'%}" alt="메뉴 이미지" /><br>스타벅스화이트딸기크림프라푸치노<br><br>
+                        <img src="{% static 'img/화이트딸기크림 프라푸치노.png'%}" alt="메뉴 이미지" /><br>화이트딸기크림 프라푸치노<br><br>
                         <input type="radio" name="q17" value="1" id="c81" /><label
                             for="c81"><span></span><span>1</span></label>
                         <input type="radio" name="q17" value="2" id="c82" /><label
@@ -333,7 +333,7 @@
                             for="c85"><span></span><span>5</span></label>
                         <br><br>
 
-                        <img src="{% static 'img/스타벅스카라멜프라푸치노.png'%}" alt="메뉴 이미지" /><br>스타벅스카라멜프라푸치노<br><br>
+                        <img src="{% static 'img/카라멜 프라푸치노.png'%}" alt="메뉴 이미지" /><br>스타벅스 카라멜 프라푸치노<br><br>
                         <input type="radio" name="q18" value="1" id="c86" /><label
                             for="c86"><span></span><span>1</span></label>
                         <input type="radio" name="q18" value="2" id="c87" /><label
@@ -346,7 +346,7 @@
                             for="c90"><span></span><span>5</span></label>
                         <br><br>
 
-                        <img src="{% static 'img/스타벅스자바칩프라푸치노.png'%}" alt="메뉴 이미지" /><br>스타벅스자바칩프라푸치노<br><br>
+                        <img src="{% static 'img/자바칩 프라푸치노.png'%}" alt="메뉴 이미지" /><br>스타벅스 자바칩 프라푸치노<br><br>
                         <input type="radio" name="q19" value="1" id="c91" /><label
                             for="c91"><span></span><span>1</span></label>
                         <input type="radio" name="q19" value="2" id="c92" /><label
@@ -359,7 +359,7 @@
                             for="c95"><span></span><span>5</span></label>
                         <br><br>
 
-                        <img src="{% static 'img/스타벅스아메리카노.png'%}" alt="메뉴 이미지" /><br>스타벅스아메리카노<br><br>
+                        <img src="{% static 'img/아메리카노.png'%}" alt="메뉴 이미지" /><br>스타벅스 아메리카노<br><br>
                         <input type="radio" name="q20" value="1" id="c96" /><label
                             for="c96"><span></span><span>1</span></label>
                         <input type="radio" name="q20" value="2" id="c97" /><label

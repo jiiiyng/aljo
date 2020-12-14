@@ -52,25 +52,22 @@ def search(request):
         return render(request, 'search.html')
 
 def brand(request):
-    q2 = request.POST.get('q2')
 
     starbucks = Aljoadmin.objects.filter(Q(brand='스타벅스')).distinct()
     starbucksuser = Aljouser.objects.filter(Q(brand='스타벅스')).distinct()
 
-    return render(request, 'brand.html', {'starbucks': starbucks, 'starbucksuser': starbucksuser,'q2': q2})
+    return render(request, 'brand.html', {'starbucks': starbucks, 'starbucksuser': starbucksuser})
 
 def brand2(request):
-    q3 = request.POST.get('q3')
 
     ediya = Aljoadmin.objects.filter(Q(brand='이디야')).distinct()
     ediyauser = Aljouser.objects.filter(Q(brand='이디야')).distinct()
 
-    return render(request, 'brand2.html', {'ediya':ediya, 'ediyauser':ediyauser, 'q3': q3})
+    return render(request, 'brand2.html', {'ediya':ediya, 'ediyauser':ediyauser})
 
 def brand3(request):
-    q4 = request.POST.get('q4')
 
     gongcha = Aljoadmin.objects.filter(Q(brand='공차')).distinct()
     gongchauser = Aljouser.objects.filter(Q(brand='공차')).distinct()
 
-    return render(request, 'brand3.html', {'gongcha':gongcha, 'gongchauser':gongchauser, 'q4': q4})
+    return render(request, 'brand3.html', {'gongcha':gongcha, 'gongchauser':gongchauser})

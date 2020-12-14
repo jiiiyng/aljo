@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load widget_tweaks %}
 
-{% block title %}aljouser_form.html{% endblock %}
+{% block title %}Aljo : 알바생이 추천하는 조합{% endblock %}
 
 {% block extra-style %}
 <style>
@@ -16,7 +16,7 @@
 
 {% block content %}
     <section class="user-board-container">
-        <h1 style="font-weight:600;">글 작성 / 수정</h1>
+        <h2 style="font-weight:600; color:var(--color-green);">글 작성 / 수정</h2>
         <p class="font-italic" style="margin-bottom:25px; color:gray;">사용자 추천 메뉴 작성 및 수정.</p>
 
         {% if form.errors %}
@@ -34,21 +34,21 @@
         {% csrf_token %}
 
             <div class="form-group row">
-                {{ form.foodname|add_label_class:"col-form-label col-sm-2 ml-3 font-weight-bold" }}
+                <label class="col-form-label col-sm-2 ml-3 font-weight-bold">음료명</label>
                 <div class="col-sm-8">
                     {{ form.foodname|add_class:"form-control"|attr:"autofocus" }}
                 </div>
             </div>
 
             <div class="form-group row">
-                {{ form.recipe|add_label_class:"col-form-label col-sm-2 ml-3 font-weight-bold" }}
+                <label class="col-form-label col-sm-2 ml-3 font-weight-bold">레시피 및 게시글</label>
                 <div class="col-sm-8">
                     {{ form.recipe|add_class:"form-control"}}
                 </div>
             </div>
 
             <div class="form-group row">
-                {{ form.brand|add_label_class:"col-form-label col-sm-2 ml-3 font-weight-bold" }}
+                <label class="col-form-label col-sm-2 ml-3 font-weight-bold">브랜드</label>
                 <div class="col-sm-8">
                     <select name="brand" style="padding:4px 4px; width:150px;">
                         <option value="스타벅스">스타벅스</option>
@@ -60,7 +60,7 @@
             </div>
 
             <div class="form-group row">
-                {{ form.role|add_label_class:"col-form-label col-sm-2 ml-3 font-weight-bold" }}
+                <label class="col-form-label col-sm-2 ml-3 font-weight-bold">알바생/매니아</label>
                 <div class="col-sm-8">
                     <select name="role" style="padding:4px 4px; width:150px;">
                         <option value="알바생">알바생</option>
@@ -70,14 +70,14 @@
             </div>
 
             <div class="form-group row">
-                {{ form.image|add_label_class:"col-form-label col-sm-2 ml-3 font-weight-bold" }}
+                <label class="col-form-label col-sm-2 ml-3 font-weight-bold">사진</label>
                 <div class="col-sm-8">
                     {{ form.image|add_class:"form-control-file" }}
                 </div>
             </div>
 
             <div class="form-group row">
-                {{ form.tags|add_label_class:"col-form-label col-sm-2 ml-3 font-weight-bold" }}
+                <label class="col-form-label col-sm-2 ml-3 font-weight-bold">태그</label>
                 <div class="col-sm-8">
                     {{ form.tags|add_class:"form-control" }}
                 </div>
